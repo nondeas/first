@@ -1,8 +1,8 @@
 # Import required libraries
 import pandas as pd
 import dash
-from dash import html
-from dash import dcc
+import dash_html_components as html
+import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import plotly.express as px
@@ -87,7 +87,7 @@ app.layout = html.Div(children=[
                                         ),
                                         # TASK2: Add a dropdown
                                         # Enter your code below. Make sure you have correct formatting.
-                                        dcc.Dropdown(id='input-year', 
+                                        dcc.Dropdown(id='input-type',   
                    options=[
                            {'label': 'Yearly Airline Performance Report', 'value': 'OPT1'},
                            {'label': 'Yearly Airline Delay Report', 'value': 'OPT2'}
@@ -105,7 +105,7 @@ app.layout = html.Div(children=[
                                             html.H2('Choose Year:', style={'margin-right': '2em'})
                                             ]
                                         ),
-                                        dcc.Dropdown(id='input-type', 
+                                       dcc.Dropdown(id='input-year',   
                                                      # Update dropdown values using list comphrehension
                                                      options=[{'label': i, 'value': i} for i in year_list],
                                                      placeholder="Select a year",
